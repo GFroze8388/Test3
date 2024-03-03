@@ -38,6 +38,8 @@
             document.getElementById("th").style.display = "block";
             document.getElementById("name").innerText += tg.initDataUnsafe.user.first_name
         })
+
+        tg.sendData(document.getElementById("name").innerText)
     </script>
 </body>
 </html>
