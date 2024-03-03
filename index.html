@@ -31,7 +31,9 @@
     <script>
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
+        if (tg) {
         tg.expand();
+        }
 
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
