@@ -10,6 +10,9 @@
         #main{
             text-align: center;
         }
+        #th{
+            display: none;
+        }
         button{
             background: var(--tg-theme-button-color);
             color: var(--tg-theme-button-text-color);
@@ -19,9 +22,21 @@
 <body>
     <div id="main">
         <h1>Онлайн магазин</h1>
-        <button>Купить</button>
+        <button id = "buy">Купить</button>
+    </div>
+    <div id = "th">
+        <p id = "name">Имя: </p>
     </div>
     <script scr="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById("buy");
 
+        buy.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("th").style.display = "block";
+            document.getElementById("name").innerText += tg.initDataUnsafe.first_name
+        })
+    </script>
 </body>
 </html>
